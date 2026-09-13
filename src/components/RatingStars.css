@@ -1,0 +1,10 @@
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  color: var(--border);
+}
+
+.rating-stars svg.is-filled {
+  color: var(--accent);
+}

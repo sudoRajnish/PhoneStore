@@ -1,0 +1,131 @@
+.order-summary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 26px;
+  position: sticky;
+  top: 96px;
+}
+
+.order-summary h2 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.order-summary__items {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  max-height: 280px;
+  overflow-y: auto;
+}
+
+.order-summary__items li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.order-summary__item-thumb {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-sm);
+}
+
+.order-summary__item-thumb svg {
+  width: 18px;
+}
+
+.order-summary__item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.order-summary__item-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.order-summary__item-meta {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.order-summary__item-total {
+  flex-shrink: 0;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.order-summary__rows {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 18px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+
+.order-summary__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.9rem;
+}
+
+.order-summary__row dt {
+  color: var(--text-muted);
+}
+
+.order-summary__row dd {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.order-summary__row--discount dd {
+  color: var(--accent);
+}
+
+.order-summary__total {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.order-summary__total span {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.order-summary__total strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+@media (max-width: 900px) {
+  .order-summary {
+    position: static;
+  }
+}

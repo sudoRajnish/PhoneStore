@@ -1,0 +1,57 @@
+.offer {
+  padding: 0 0 72px;
+}
+
+.offer__card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--violet) 0%, #4433b0 100%);
+  border-radius: var(--radius-lg);
+  padding: 56px 40px;
+  text-align: center;
+}
+
+.offer__text {
+  position: relative;
+  z-index: 1;
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.offer__text .section-eyebrow {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.offer__text h2 {
+  color: #fff;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+.offer__text p {
+  color: rgba(255, 255, 255, 0.8);
+  margin: 12px 0 28px;
+}
+
+.offer__glow {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 260px;
+  height: 260px;
+  background: var(--accent);
+  opacity: 0.25;
+  border-radius: 50%;
+  filter: blur(40px);
+}
+
+@media (max-width: 600px) {
+  .offer__card {
+    padding: 40px 24px;
+  }
+}

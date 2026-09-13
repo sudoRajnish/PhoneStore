@@ -1,0 +1,72 @@
+.login-form__submit {
+  position: relative;
+  margin-top: 6px;
+}
+
+.login-form__submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.login-form__submit:disabled:hover {
+  box-shadow: none;
+}
+
+.login-form__spinner {
+  width: 15px;
+  height: 15px;
+  border: 2px solid rgba(10, 14, 23, 0.3);
+  border-top-color: var(--accent-contrast);
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.login-form__message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+  animation: field-error-in 0.15s ease both;
+}
+
+.login-form__message svg {
+  flex-shrink: 0;
+}
+
+.login-form__message--success {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(200, 255, 77, 0.3);
+}
+
+.login-form__message--error {
+  background: rgba(255, 97, 97, 0.1);
+  color: #ff8686;
+  border: 1px solid rgba(255, 97, 97, 0.3);
+}
+
+.login-form__register {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.login-form__register a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.login-form__register a:hover {
+  color: var(--accent-strong);
+}

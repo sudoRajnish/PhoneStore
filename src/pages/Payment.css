@@ -1,0 +1,232 @@
+.payment {
+  padding: 40px 0 80px;
+}
+
+.payment__empty {
+  padding: 40px 0;
+}
+
+.payment__heading {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.payment__heading svg {
+  flex-shrink: 0;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: 10px;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+
+.payment__heading h1 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.payment__heading p {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* Initiated / Processing layout */
+.payment__grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 32px;
+  align-items: start;
+}
+
+.payment__panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 36px 26px;
+}
+
+.payment__panel h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 6px;
+}
+
+.payment__panel p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.payment__amount {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+}
+
+.payment__panel .btn {
+  width: 100%;
+}
+
+.payment__cancel {
+  margin-top: 14px;
+  background: transparent;
+  border: none;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.payment__cancel:hover {
+  color: #ff6161;
+}
+
+/* Icon badges shared by all states */
+.payment__panel-icon {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.payment__panel-icon--pending {
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.payment__panel-icon--success {
+  background: rgba(200, 255, 77, 0.14);
+  color: var(--accent);
+}
+
+.payment__panel-icon--failed {
+  background: rgba(255, 97, 97, 0.12);
+  color: #ff6161;
+}
+
+.payment__panel-icon--cancelled {
+  background: var(--surface-alt);
+  color: var(--text-dim);
+}
+
+.payment__spinner {
+  width: 26px;
+  height: 26px;
+  border: 3px solid rgba(200, 255, 77, 0.25);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: payment-spin 0.8s linear infinite;
+}
+
+@keyframes payment-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Success / Failed / Cancelled result screens */
+.payment__result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 6px;
+  max-width: 480px;
+  margin: 20px auto 0;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 44px 32px;
+  animation: payment-result-in 0.3s ease both;
+}
+
+@keyframes payment-result-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.payment__result h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 10px;
+}
+
+.payment__result p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.payment__receipt {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 26px;
+  padding: 18px;
+  background: var(--surface-alt);
+  border-radius: var(--radius-md);
+}
+
+.payment__receipt div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment__receipt dt {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+
+.payment__receipt dd {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.payment__result-actions {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.payment__result-actions .btn {
+  flex: 1;
+}
+
+/* ===================== Responsive ===================== */
+@media (max-width: 900px) {
+  .payment__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .payment__result {
+    padding: 32px 20px;
+  }
+
+  .payment__result-actions {
+    flex-direction: column;
+  }
+}

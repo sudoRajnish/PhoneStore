@@ -1,0 +1,49 @@
+.otp-input {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.otp-input input {
+  width: 46px;
+  height: 54px;
+  text-align: center;
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.otp-input input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px var(--accent-soft);
+}
+
+.otp-input.has-error input {
+  border-color: #ff6161;
+}
+
+.otp-input__error {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #ff8686;
+}
+
+@media (max-width: 420px) {
+  .otp-input {
+    gap: 7px;
+  }
+
+  .otp-input input {
+    width: 40px;
+    height: 48px;
+    font-size: 1.1rem;
+  }
+}

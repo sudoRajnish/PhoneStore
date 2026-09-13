@@ -1,0 +1,126 @@
+.update-profile {
+  padding: 48px 0 80px;
+}
+
+.update-profile__container {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.update-profile__heading {
+  margin-bottom: 28px;
+}
+
+.update-profile__heading h1 {
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.update-profile__heading p {
+  margin-top: 6px;
+  color: var(--text-muted);
+}
+
+.update-profile__card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+}
+
+.update-profile__grid {
+  display: grid;
+  gap: 0 16px;
+}
+
+.update-profile__grid--2 {
+  grid-template-columns: 1fr 1fr;
+}
+
+.update-profile__grid--3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.update-profile__message {
+  padding: 11px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 18px;
+  animation: field-error-in 0.15s ease both;
+}
+
+.update-profile__message--success {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border: 1px solid rgba(200, 255, 77, 0.3);
+}
+
+.update-profile__message--error {
+  background: rgba(255, 97, 97, 0.1);
+  color: #ff8686;
+  border: 1px solid rgba(255, 97, 97, 0.3);
+}
+
+.update-profile__actions {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.update-profile__actions .btn {
+  flex: 1;
+}
+
+.update-profile__btn-spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(10, 14, 23, 0.3);
+  border-top-color: var(--accent-contrast);
+  border-radius: 50%;
+  animation: profile-spin 0.7s linear infinite;
+  margin-right: 4px;
+}
+
+/* Full-page loading state */
+.update-profile__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding: 100px 0;
+  color: var(--text-muted);
+  font-size: 0.92rem;
+}
+
+.update-profile__spinner {
+  width: 30px;
+  height: 30px;
+  border: 3px solid var(--border);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: profile-spin 0.8s linear infinite;
+}
+
+@keyframes profile-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 560px) {
+  .update-profile__card {
+    padding: 22px;
+  }
+
+  .update-profile__grid--2,
+  .update-profile__grid--3 {
+    grid-template-columns: 1fr;
+  }
+
+  .update-profile__actions {
+    flex-direction: column;
+  }
+}

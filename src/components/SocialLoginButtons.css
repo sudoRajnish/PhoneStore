@@ -1,0 +1,53 @@
+.social-login {
+  margin-top: 24px;
+}
+
+.social-login__divider {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.social-login__divider::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: var(--border);
+}
+
+.social-login__divider span {
+  position: relative;
+  background: var(--bg);
+  padding: 0 12px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+}
+
+.social-login__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.social-login__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-alt);
+  color: var(--text-primary);
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.social-login__btn:hover {
+  border-color: var(--text-primary);
+  transform: translateY(-1px);
+}
